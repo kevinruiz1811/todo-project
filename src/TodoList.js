@@ -1,14 +1,12 @@
 import React from "react";
-import { TodoItem } from "./TodoItem";
+import "./TodoList.css";
 
-const todos = [
-  { text: "Cortar cebolla", complete: false },
-  { text: "Tomar el curso de intro react", complete: false },
-  { text: "Llorar con la llorona", complete: false },
-];
-
-function TodoList() {
-  return todos.map((todo) => <TodoItem key={todo.text} text={todo.text} />);
+function TodoList(props) {
+  return (
+    <section>
+      <ul>{props.children}</ul>
+    </section>
+  );
 }
 
 export { TodoList };
