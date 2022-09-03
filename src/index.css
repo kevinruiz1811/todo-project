@@ -5,6 +5,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(60deg, #ff6596, #60bef8, #d88cff);
+  background-size: 600% 600%;
+  animation: bgAnimated 15s infinite linear;
+}
+
+@keyframes bgAnimated {
+  0%{
+    background-position: 0 85%;
+  }
+
+  50%{
+    background-position: 100% 20%;
+  }
+
+  100%{
+    background-position: 0% 85%;
+  }
 }
 
 code {
