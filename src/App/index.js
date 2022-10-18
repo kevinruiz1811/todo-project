@@ -10,7 +10,8 @@ import { CreateTodoButton } from "../CreateTodoButton";
 import { Modal } from "../Modal";
 import { TodosError } from "../TodosError";
 import { TodosLoading } from "../TodosLoading";
-import { EmtpyTodos } from "../EmptyTodos";
+import { EmptyTodos } from "../EmptyTodos";
+import { ChangelaertWithStorageListener } from "../ChangeAlert";
 
 function App() {
   const {
@@ -26,6 +27,7 @@ function App() {
     searchvalue,
     setSearchValue,
     addTodo,
+    sincronizeTodos,
   } = useTodos();
 
   return (
@@ -43,7 +45,7 @@ function App() {
         searchvalue={searchvalue}
         onError={() => <TodosError />}
         onLoading={() => <TodosLoading />}
-        onEmptyTodos={() => <EmtpyTodos />}
+        onEmptyTodos={() => <EmptyTodos />}
         onEmptySearch={(searchText) => (
           <p>NO ha resultados para: {searchText}</p>
         )}
@@ -66,6 +68,8 @@ function App() {
       )}
 
       <CreateTodoButton setOpenModal={setOpenModal} />
+
+      <ChangelaertWithStorageListener sincronize={sincronizeTodos} />
     </React.Fragment>
   );
 }
