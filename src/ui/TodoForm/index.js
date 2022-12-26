@@ -7,7 +7,7 @@ function TodoForm(props) {
   const [newTodoValue, setNewTodoValue] = React.useState("");
 
   const onCancel = () => {
-    navigate('/');
+    navigate("/");
   };
 
   const onChange = (event) => {
@@ -17,6 +17,7 @@ function TodoForm(props) {
   const onAdd = (event) => {
     event.preventDefault();
     props.submitEvent(newTodoValue);
+    navigate("/");
   };
 
   return (
@@ -25,7 +26,7 @@ function TodoForm(props) {
       <textarea
         value={newTodoValue}
         onChange={onChange}
-        placeholder="Agregar TODO"
+        placeholder="TODO"
         className="TodoForm-textarea"
       ></textarea>
       <div className="TodoForm-buttonContainer">

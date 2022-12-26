@@ -25,7 +25,7 @@ function HomePage() {
     searchedTodos,
   } = states;
 
-  const { setSearchValue, completeTodo, addTodo, deleteTodo, sincronizeTodos } =
+  const { setSearchValue, completeTodo, deleteTodo, sincronizeTodos } =
     stateUpdaters;
 
   return (
@@ -59,15 +59,6 @@ function HomePage() {
           />
         )}
       </TodoList>
-
-      {/* {!!openModal && (
-        <Modal>
-          <TodoForm
-            addTodo={addTodo}
-            setOpenModal={setOpenModal}
-          />
-        </Modal>
-      )} */}
 
       <CreateTodoButton onClick={() => navigate("/new")} />
 
