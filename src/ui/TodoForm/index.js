@@ -4,7 +4,7 @@ import "./TodoForm.css";
 
 function TodoForm(props) {
   const navigate = useNavigate();
-  const [newTodoValue, setNewTodoValue] = React.useState("");
+  const [newTodoValue, setNewTodoValue] = React.useState(props.defaultTodoText || "");
 
   const onCancel = () => {
     navigate("/");
@@ -26,7 +26,7 @@ function TodoForm(props) {
       <textarea
         value={newTodoValue}
         onChange={onChange}
-        placeholder="TODO"
+        placeholder="Crear nuevo TODO"
         className="TodoForm-textarea"
       ></textarea>
       <div className="TodoForm-buttonContainer">
