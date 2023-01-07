@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useTodos } from "../useTodos";
 import { TodoCounter } from "../../ui/TodoCounter";
 import { TodoSearch } from "../../ui/TodoSearch";
@@ -15,6 +15,7 @@ import { ChangeAlert } from "../../ui/ChangeAlert";
 function HomePage() {
   const navigate = useNavigate();
   const { states, stateUpdaters } = useTodos();
+  const [params, setParams] = useSearchParams();
 
   const {
     loading,
@@ -32,7 +33,12 @@ function HomePage() {
     <React.Fragment>
       <TodoHeader loading={loading}>
         <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} />
-        <TodoSearch searchvalue={searchvalue} setSearchValue={setSearchValue} />
+        <TodoSearch
+          searchvalue={searchvalue}
+          setSearchValue={setSearchValue}
+          params={params}
+          setParams={setParams}
+        />
       </TodoHeader>
 
       <TodoList
